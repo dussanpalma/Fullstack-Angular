@@ -1,0 +1,27 @@
+<div><button class="btn btn-rounded btn-success" type="button" routerLink="/clientes">Atrás</button></div>
+<br/>
+<h1 class="container">Facturas</h1>
+<div class="alert alert-info my-4" *ngIf="client.facturas.length == 0">
+    No hay facturas asignadas para el cliente
+</div>
+
+    <table class="table table-bordered table-striped my-4" *ngIf="client.facturas.length > 0" >
+        <thead>
+            <tr>
+                <th>Folio</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Total Factura</th>
+                <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let factura of client.facturas">
+            <td>{{factura.id_factura}}</td>
+            <td>{{factura.descripcion}}</td>
+            <td>{{factura.createAt}}</td>
+            <td>{{factura.total}}$</td>
+            <td><button type="button"  [routerLink]="['/facturas', factura.id_factura]" class="btn btn-success btn-sm">Ver factura</button></td>
+            </tr>
+        </tbody>
+    </table>

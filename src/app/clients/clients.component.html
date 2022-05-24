@@ -1,0 +1,40 @@
+<h1 class="container">Clientes</h1>
+<div class=" container">
+    <div class="nav justify-content-center">
+        <div class="my-2 text-left">
+        <div><button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">Crear Cliente</button></div>
+         </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Tipo de <br /> documento</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let client of clients">
+                    <td>{{ client.id }}</td>
+                    <td>{{ client.name  | uppercase}} </td>
+                    <td>{{ client.lastName | uppercase }} </td>
+                    <td>{{ client.typeDocument | uppercase }}</td>
+                    <td>{{ client.document  }}</td>
+                    <td>{{ client.phone }}</td>
+                    <td>{{ client.email | uppercase }}</td>
+                    <td>{{ client.createAt }}</td>
+                    <td><button type="button"  [routerLink]="['/clientes', client.id]" class="btn btn-success btn-sm">Facturas</button></td>
+                    <td><button type="button"  [routerLink]="['/clientes/form', client.id]" class="btn btn-primary btn-sm">Editar </button></td>
+                    <td><button type="button"  class="btn btn-danger btn-sm" (click)='delete(client)'>Eliminar </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

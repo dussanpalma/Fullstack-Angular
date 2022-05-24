@@ -1,0 +1,35 @@
+<div><button class="btn btn-rounded btn-success" type="button" routerLink="/clientes">Atrás</button></div>
+<br/>
+<h1 class="container">Mecánicos</h1>
+<br/>
+<div class=" container">
+    <div class="nav justify-content-center">
+        <br />
+        <br />
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Tipo de <br /> documento</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let mechanic of mechanics">
+                    <td>{{ mechanic.id }}</td>
+                    <td>{{ mechanic.name | uppercase }} {{ mechanic.secondName | uppercase }}</td>
+                    <td>{{ mechanic.lastName | uppercase }} {{ mechanic.secondLastName | uppercase }}</td>
+                    <td>{{ mechanic.typeDocument | uppercase }}</td>
+                    <td>{{ mechanic.document }}</td>
+                    <td>{{ mechanic.phone }}</td>
+                    <td>{{ mechanic.email | uppercase }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
