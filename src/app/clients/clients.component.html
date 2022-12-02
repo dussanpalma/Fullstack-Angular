@@ -30,7 +30,7 @@
                     <td>{{ client.phone }}</td>
                     <td>{{ client.email | uppercase }}</td>
                     <td>{{ client.createAt }}</td>
-                    <td><button type="button"  [routerLink]="['/clientes', client.id]" class="btn btn-success btn-sm">Facturas</button></td>
+                    <td><button type="button"  [routerLink]="['/facturas', client.id]" class="btn btn-success btn-sm">Facturas</button></td>
                     <td><button type="button"  [routerLink]="['/clientes/form', client.id]" class="btn btn-primary btn-sm">Editar </button></td>
                     <td><button type="button"  class="btn btn-danger btn-sm" (click)='delete(client)'>Eliminar </button></td>
                 </tr>
